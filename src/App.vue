@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <p>{{message}}}</p>
+    <p>{{message}}</p>
     <router-view/>
   </div>
 </template>
@@ -15,11 +15,23 @@ export default {
           }
   },
   created(){
-    if(this.$route.fullPath=='/'){
-      router.push("/home");
-      console.log('path:',this.$route.path);
+    this.defaultPath();
+  },
+  watch:{
+    "$route"(to){
+      this.defaultPath();
+    }
+  },
+  methods:{
+    defaultPath(){
+      if(this.$route.fullPath=='/'){
+        console.log('path00:',this.$route.path);
+        router.push("/home");
+        console.log('path:',this.$route.path);
+      }
     }
   }
+
 }
 </script>
 
