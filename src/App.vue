@@ -1,13 +1,25 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <p>{{message}}}</p>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data:function(){
+    return {
+      message:"测试测试"
+          }
+  },
+  created(){
+    if(this.$route.fullPath=='/'){
+      router.push("/home");
+      console.log('path:',this.$route.path);
+    }
+  }
 }
 </script>
 
