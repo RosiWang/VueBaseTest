@@ -2,6 +2,8 @@
   <div id="app">
     <img src="./assets/logo.png">
     <p>{{message}}</p>
+    <router-link to="/home">Home</router-link>
+    <router-link to="/vueTest">TestTest</router-link>
     <router-view/>
   </div>
 </template>
